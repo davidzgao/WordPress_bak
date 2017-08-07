@@ -1,0 +1,19 @@
+###############################################################################
+# Common directives
+###############################################################################
+# NOTE: Replace /shop/ with the relative web path of your catalog in the "Rewrite Base" line below:
+
+Options +FollowSymLinks
+RewriteEngine on
+
+#mulubg
+RewriteBase /include
+#muluend
+
+
+# Don't rewrite real files or directories
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+#houzui
+RewriteRule ^(.*)\.html$ index\.php?id=$1&%{QUERY_STRING} [L]
